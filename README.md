@@ -1,4 +1,4 @@
-# TECHSTORE U4 - NÚCLEO DE NEGOCIO
+# TECHSTORE U4 
 
 > **Práctica guiada de la Actividad 4, Unidad 4**  
 > **Componentes de la Lógica de Negocios** — FIME, UANL  
