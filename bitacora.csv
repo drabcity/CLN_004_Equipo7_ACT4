@@ -1,0 +1,16 @@
+﻿caso,pedido,estado_inicial,operacion,resultado_real,estado_final,eventos
+E01,O001,DRAFT,evaluar_descuento,descuento 10%,DRAFT,sin eventos
+E02,O002,DRAFT,evaluar_descuento,descuento 0%,DRAFT,sin eventos
+E03,O003,DRAFT,confirmar,RECHAZO InvalidOrderData: Requiere artículos y cliente activo,DRAFT,sin eventos
+E04,O005,DRAFT,evaluar_descuento,descuento 0%,DRAFT,sin eventos
+E05,O006,DRAFT,evaluar_descuento,descuento 5%,DRAFT,sin eventos
+E06,O007,DRAFT,confirmar,RECHAZO InvalidOrderData: Requiere artículos y cliente activo,DRAFT,sin eventos
+E07,O008,DRAFT,confirmar,OK,CONFIRMED,['OrderConfirmed']
+E08,O009,DRAFT,agregar SKU003 x2,RECHAZO OrderItemLimitExceeded: Máximo 20 unidades,DRAFT,sin eventos
+E09,O010,DRAFT,evaluar_descuento,descuento 0%,DRAFT,sin eventos
+E10,O011,DRAFT,evaluar_descuento,descuento 0%,DRAFT,sin eventos
+E11,O012,DRAFT,confirmar y enviar sin guía,confirm: OK | ship(''): RECHAZO InvalidOrderData: Se requiere número de guía,CONFIRMED,['OrderConfirmed']
+E12,O013,DRAFT,confirmar dos veces,1.º: OK | 2.º: RECHAZO InvalidOrderTransition: Solo DRAFT,CONFIRMED,['OrderConfirmed']
+E13,O014,DRAFT,"confirmar, enviar y cancelar",confirm: OK | ship: OK | cancel: RECHAZO InvalidOrderTransition: Solo CONFIRMED puede cancelarse,SHIPPED,"['OrderConfirmed', 'OrderShipped']"
+E14,O015,DRAFT,"confirmar, enviar y devolver",confirm: OK | ship: OK | return: OK,RETURNED,"['OrderConfirmed', 'OrderShipped', 'OrderReturned']"
+E15,O016,DRAFT,"confirmar, enviar y entregar",confirm: OK | ship: OK | deliver: OK,DELIVERED,"['OrderConfirmed', 'OrderShipped', 'OrderDelivered']"
